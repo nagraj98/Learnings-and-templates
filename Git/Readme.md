@@ -19,7 +19,8 @@ Points to note about a gif file :
 ## Creating personal Repo
 A repository with the same name as your username, is a [special repository](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/managing-your-profile-readme): its `README.md` will appear on your profile!
 For example, the nagraj98 repository's readme appears on my profile like so :
-![](https://github.com/nagraj98/nagraj98/blob/main/assets/Git/personalProfile.png)
+
+![](https://github.com/nagraj98/Learnings-and-templates/blob/main/assets/Git/personalProfile.png)
 
 #### Adding Github stats cards :
 Anurag Hazra has created  an aweome project ([github-readme-stats](https://github.com/anuraghazra/github-readme-stats)) which can be used to show various different github stats cards.
@@ -28,9 +29,10 @@ The one I use in my profile is the following :
     ![Nagraj's github stats](https://github-readme-stats.vercel.app/api?username=nagraj98&show_icons=true&title_color=EEFCEF&icon_color=EEFCEF&text_color=00B0E0&bg_color=151515)
 
 and it looks like this :
-![Nagraj's github stats](https://github-readme-stats.vercel.app/api?username=nagraj98&show_icons=true&title_color=EEFCEF&icon_color=EEFCEF&text_color=00B0E0&bg_color=151515)
+<!-- -->
+<!-- ![Nagraj's github stats](https://github-readme-stats.vercel.app/api?username=nagraj98&show_icons=true&title_color=EEFCEF&icon_color=EEFCEF&text_color=00B0E0&bg_color=151515) --> 
 
-![](https://github.com/nagraj98/nagraj98/blob/main/assets/Git/githubStats.png)
+![](https://github.com/nagraj98/Learnings-and-templates/blob/main/assets/Git/githubStats.png)
 
 #### Adding visitor count
 [Visitor badge](https://visitor-badge.laobi.icu/#docs) provides a oneline solution to add a visitor count to our profile :
@@ -38,9 +40,10 @@ and it looks like this :
     ![Visitor Badge](https://visitor-badge.laobi.icu/badge?page_id=nagraj98.nagraj98)
 
 And it looks like so :
-![Visitor Badge](https://visitor-badge.laobi.icu/badge?page_id=nagraj98.nagraj98)
 
-![](https://github.com/nagraj98/nagraj98/blob/main/assets/Git/visitorNumber.png)
+<!-- ![Visitor Badge](https://visitor-badge.laobi.icu/badge?page_id=nagraj98.nagraj98) -->
+
+![](https://github.com/nagraj98/Learnings-and-templates/blob/main/assets/Git/visitorNumber.png)
 
 #### Adding Languages and Tools
 [Shields.io](https://shields.io/) provides fast and scalable images as badges, and can be used to beautifully display your languages and tools. Lets look at an example : The following line will show the html badge
