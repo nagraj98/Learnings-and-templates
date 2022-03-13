@@ -37,7 +37,12 @@ where,
 -   `app`: the object created inside of  `main.py`  with the line  `app = FastAPI()`.
 -   `--reload`: make the server restart after code changes. Only use for development.
 
-This starts the server at localhost(http://127.0.0.1:8000) by default. FastAPI also provides the docs using [SwaggerUI](https://github.com/swagger-api/swagger-ui) at **/docs**, and using [ReDoc](https://github.com/Redocly/redoc) at **/redoc** 
+This starts the server at localhost(http://127.0.0.1:8000) by default. FastAPI also provides the docs using [SwaggerUI](https://github.com/swagger-api/swagger-ui) at **/docs**, and using [ReDoc](https://github.com/Redocly/redoc) at **/redoc**
+
+We can also run uvicorn directly from our application (main file)
+
+    if  __name__  ==  "__main__":  
+	    uvicorn.run("main:app",  host="127.0.0.1",  port=9000,  log_level="info")
 
 
 ## CORS
