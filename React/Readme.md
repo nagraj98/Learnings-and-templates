@@ -117,3 +117,9 @@ As we saw it is better to prefer expressions like map over statements like for l
 	})
 
 Note that we use key attribute which should have a unique value. This key is necessary to help react tell which element is new, so that it doesn't inefficiently mutate all the elements. (for more detail on the need of key, [read this](https://reactjs.org/docs/reconciliation.html#recursing-on-children))
+
+
+
+## To be expanded upon
+
+Different ways to [display images](https://betterprogramming.pub/how-to-display-images-in-react-dfe22a66d5e7) in React. Another [article](https://codingstatus.com/how-to-display-images-in-react-js/)
