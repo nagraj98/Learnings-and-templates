@@ -8,7 +8,9 @@ Node
 We need to be in a completely blank folder, and the folder name should not have Capital letters or spaces in it. Generally we use hyphens, like my-first-react-app.
 Run the following to create a new react app :
 
+```
     npx create-react-app .
+ ```
 npx (instead of npm) is used to allow us to *execute* the create-react-app package (instead of installing it). And the period just indicates that use *this* or *current* folder. 
 Note that create-react-app works with only some versions, so if it gives any error, download the suggested node version or the latest lms version. For managing node versions, it is best to use nvm. If using Windows machine, use nvm for windows. Once nvm is installed :
 
@@ -40,7 +42,9 @@ If you want a blank app, all the logos, css files, test files, css imports, serv
 [Create-react-app](https://create-react-app.dev/docs/getting-started/) will create a basic react app which will have an index.html with a body containing only one div of id-root. React will be putting our entire app into this root div.
 The application starts in src folder in index.js at this line :
 
+```js
     ReactDOM.render(<App />, document.getElementById('root'));
+```
 
 The above line tells react to render the whole App component into the root div of index.html. 
 
@@ -52,11 +56,13 @@ The plugin - ES7 React/Redux/ snippets, helps us in using shortcuts for boilerpl
 
 We can pass in props to a component, just as we pass attributes to an html tag. for ex :
 
+```js
     // definition of the TodoList Component
     export default function TodoList({ todolist })
     
     // using the TodoList component in another Component, for ex- App
     <TodoList todolist={todos}/>
+```
 
 Note : If we want to return multiple components at once, then we need to wrap then in <React.Fragment> or <> for short.
 
@@ -65,20 +71,24 @@ Note : If we want to return multiple components at once, then we need to wrap th
 ### useState hook
 In react we manage the state of the app, and when the state changes, we rerender the app. In order to make use of State in a function component :
 
+```js
     import React, { useState } from 'react';
     const [var, setVar] = useState("defaultVal");
+```
 
 We are doing object destructuring above, because useState returns an array.
 
 Setting the value of a variable :
-
+```js
     setVar("newValue");
+```
 
 Setting the value of an array :
-
+```js
     setTodos((prevTodos) => {
 	    return [...prevTodos, newTodoObject]
 	});
+```
 
 Note that each time the set function is called, the component will be rerendered.
 
@@ -86,10 +96,13 @@ Note that each time the set function is called, the component will be rerendered
 ### useRef hook
 useRef allows us to reference elements inside of our html. For example, let us say we have an input textbox :
 
+```html
     <input type='text' />
+```
 
 then we can access it using useRef thus :
 
+```js
     const textboxRef = useRef()
     
     // referencing the text box
@@ -97,6 +110,7 @@ then we can access it using useRef thus :
     
     //Accessing the textbox's value
     const userInput = textboxRef.current.value
+ ```
 
 ## Statements and Expressions
 We saw that a component is just a function. So if we want to return an array of 
@@ -112,14 +126,22 @@ Its not like these are good or bad, they're just easier to think of in the conte
 ## Looping (Rendering multiple components)
 As we saw it is better to prefer expressions like map over statements like for loop. Morover, a react component expects either a string, another component, or an array of components. For loops do not return any of these, whereas map will return an array. Hence if we want to [return multiple components](https://reactjs.org/docs/lists-and-keys.html)(let us say returning multiple todo components in a todolist component), it is preferred to use map as follows:
 
+```js
     todolist.map((mytodo) => {
 	    return <Todo key={mytodo.id} todo={mytodo} />
 	})
+```
 
 Note that we use key attribute which should have a unique value. This key is necessary to help react tell which element is new, so that it doesn't inefficiently mutate all the elements. (for more detail on the need of key, [read this](https://reactjs.org/docs/reconciliation.html#recursing-on-children))
-
 
 
 ## To be expanded upon
 
 Different ways to [display images](https://betterprogramming.pub/how-to-display-images-in-react-dfe22a66d5e7) in React. Another [article](https://codingstatus.com/how-to-display-images-in-react-js/)
+
+## How to change default port in webpack server :
+```js
+	devServer: {
+	  port: 9000
+	}
+```

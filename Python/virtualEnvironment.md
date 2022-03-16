@@ -16,6 +16,32 @@ The simple and recommended solution to avoid such a scenario is to use  Virtual 
 
 Each virtual environment is its own little copy of the Python runtime, taking up about 25 to 30 MB
 
+## Requirements file
+
+    pip freeze > requirements.txt
+
+## Moving the virtual environment to another location.
+
+It is better and easier to jusst create a new virtual environment. The below ways did not actually work for me. 
+
+It is possible to just move the virtual environement directory to another location.
+ 
+The only thing to keep in mind is that the location of the venv is hardcoded into the activate script of that environemnt in these lines :
+
+    VIRTUAL_ENV="the/initial/location/"
+    export VIRTUAL_ENV
+
+It is also hardcoded in the activate.bat :
+
+    set VIRTUAL_ENV=the/initial/location/
+
+
+So whenever you move the virtual environment, you need to manually replace these instances of initial location with the new location.
+
+If you don't, you will see an error similar to the one given below, when you use any library like pip :
+
+    Fatal error in launcher: Unable to create process using '"the\initial\location\python.exe" "new\location\pip.exe" ': The system cannot find the file specified.
+
 ## Connecting virtual environment to jupyter
 1. Inside this virtual environment install ipykernel :
 `pip install ipykernel`

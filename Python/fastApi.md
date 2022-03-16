@@ -4,11 +4,14 @@
 
 ## Installation
 
+```python
     pip install "fastapi[all]"
+```
 Specifying "all" installs some additional things like [uvicorn](http://www.uvicorn.org/) which can be used as the server that runs our code
 
 ## Getting Started
 
+```python
     from  fastapi  import  FastAPI
     
     app  =  FastAPI()
@@ -16,6 +19,7 @@ Specifying "all" installs some additional things like [uvicorn](http://www.uvico
     @app.get("/")
     async  def  root():  
 	    return  {"message":  "Hello World"}
+```
 
 Here the `app` variable will be an "instance" of the class `FastAPI`.
 
@@ -30,7 +34,9 @@ In the operation function ( like root() ), we can return a  `dict`,  `list`, sin
 
 This is the [simplest](https://fastapi.tiangolo.com/tutorial/first-steps/) fastapi app. We can write this in a main file and then run it using following uvicorn command in terminal.
 
+```
     uvicorn main:app --reload
+```
 where, 
 
 -   `main`: the file  `main.py`  (the Python "module"). If the main file is in a directory called api, we need to mention it like `api.main`
@@ -41,9 +47,10 @@ This starts the server at localhost(http://127.0.0.1:8000) by default. FastAPI a
 
 We can also run uvicorn directly from our application (main file)
 
+```python
     if  __name__  ==  "__main__":  
 	    uvicorn.run("main:app",  host="127.0.0.1",  port=9000,  log_level="info")
-
+```
 
 ## CORS
 When accessing the api from an origin that is not same as the api (which will mostly be the case), We will get an error similar to "**Access to fetch at *** from origin *** has been blocked by CORS policy: No 'Access-Control-Allow-Origin**"
@@ -52,6 +59,7 @@ The [solution](https://fastapi.tiangolo.com/tutorial/cors/) to this problem is t
 
 Adding CORS middleware and allowing access to specific origins from which we intend to access this api :
 
+```python
     from  fastapi.middleware.cors  import  CORSMiddleware
     
     origins = [ "http://localhost", 
@@ -62,11 +70,20 @@ Adding CORS middleware and allowing access to specific origins from which we int
 						allow_credentials=True, 
 						allow_methods=["*"], 
 						allow_headers=["*"], )
+```
 
 ## Returning files or images
 
 We can use the [FileResponse](https://fastapi.tiangolo.com/advanced/custom-response/#fileresponse) object. for this.
 
-    return FileResponse(some_file_path)
+```python
+	return FileResponse(some_file_path)
+```
 
 Other ways to return images, read [here](https://pyquestions.com/how-do-i-return-an-image-in-fastapi)
+
+## Accepting the body of post request :
+
+Read about fastapi request body [here](https://fastapi.tiangolo.com/tutorial/body/)
+
+Read about pydantic models [here](https://pydantic-docs.helpmanual.io/usage/models/)
