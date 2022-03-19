@@ -57,3 +57,29 @@ We can use `datetime.now()` to get the current date and time, and `strftime()` t
 		}  
 	thisdict["color"] = "red"
 ```
+
+# Advanced
+
+## Getting an image from base64 data
+Generally, the base64 representation of an image follows the below pattern :
+
+"data:image/format;base64,dfljgndlfnlffiifldk....."
+
+The actual data of the image is in the part after *base64,* Hence we can get image from it like this :
+```python
+# let us say we have data for jpeg image.
+binString = "data:image/jpeg;base64,dfljgndlfnlffiifldk....."
+
+# get the data after the comma.
+base64data  =  binString.split(",")[1]
+
+# convert string into bytes like object
+bytesObject  =  bytes(base64data, "utf-8")
+
+# decode the bytes like object
+image_binary  =  base64.decodestring(bytesObject)
+
+# write to a file. This is our image file.
+with  open('image2.jpeg','wb') as  f:
+	f.write(image_binary)
+```
