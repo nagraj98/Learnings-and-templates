@@ -1,4 +1,8 @@
+
 ## Canvas
+
+
+## Introduction
 
 The  `<canvas>`  tag is used to draw graphics, on the fly, via scripting (usually JavaScript).
 
@@ -26,6 +30,7 @@ It looks like this :
 
 The HTML canvas is a two-dimensional grid. The **upper-left corner** of the canvas has the coordinates (**0,0**).
 
+## Drawing on the Canvas
 #### To draw a straight line on a canvas, use the following methods:
 
 -   moveTo(_x,y_) - defines the starting point of the line
@@ -72,3 +77,17 @@ It is important to use some kind of onload event, above we are using window.onlo
 ```js
 	context.clearRect(0, 0, canvas.width, canvas.height);
 ```
+
+## Saving the Canvas image :
+A Data URL,  in the context of an image, is essentially the binary data of an image file encoded in [Base64](https://en.wikipedia.org/wiki/Base64), to be displayed as an ASCII string.
+
+```js
+const dataURL = canvas.toDataURL();
+```
+So we need to call the toDataurl method on the canvas, to get the base64 data of the image which looks similar to this: 
+```js
+data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAE...
+```
+This data can be sent through a fetch post request, and can be handled by the backend, by converting the data after comma, ie ```iVBORw0KGgoA...``` to an image. (In python, the string is first converted to a bytes like object, and then it is decoded from base64, and then saved to a file.)
+
+There is also a [toBlob](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toBlob) method of the canvas, using which we can convert it to a blob, but I'm not sure how to save the image from the blob.

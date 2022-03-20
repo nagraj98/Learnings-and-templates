@@ -1,4 +1,5 @@
 
+
 # Basics
 
 ## Datetime
@@ -71,10 +72,10 @@ The actual data of the image is in the part after *base64,* Hence we can get ima
 binString = "data:image/jpeg;base64,dfljgndlfnlffiifldk....."
 
 # get the data after the comma.
-base64data  =  binString.split(",")[1]
+base64String  =  binString.split(",")[1]
 
 # convert string into bytes like object
-bytesObject  =  bytes(base64data, "utf-8")
+bytesObject  =  bytes(base64String, "utf-8")
 
 # decode the bytes like object
 image_binary  =  base64.decodestring(bytesObject)
@@ -82,4 +83,8 @@ image_binary  =  base64.decodestring(bytesObject)
 # write to a file. This is our image file.
 with  open('image2.jpeg','wb') as  f:
 	f.write(image_binary)
+```
+For converting string to bytes like object, we can also use the encode method on the string. This method has utf-8 as the default encoding when no argument is given.
+```python
+bytesObject = base64String.encode()
 ```
