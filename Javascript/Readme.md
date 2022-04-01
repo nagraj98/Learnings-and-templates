@@ -119,6 +119,7 @@ This would be the equivalent of defining the following HTML tag inside the
 
 Creating an image element dynamically using javascript : [read here](https://www.geeksforgeeks.org/how-to-create-an-image-element-dynamically-using-javascript/)
 
+
 ## Fetch
 
 The `fetch()` function lets you load other files on the internet, but it does not work with local files loaded using `file://` URLs. This is a safety feature. Imagine how scary the internet would be if any website could read files from your computer!
@@ -173,3 +174,102 @@ During the loading process of an audio/video, the following events occur, in thi
 5.  [onprogress](https://www.w3schools.com/jsref/event_onprogress.asp)
 6.  [oncanplay](https://www.w3schools.com/jsref/event_oncanplay.asp)
 7.  [oncanplaythrough](https://www.w3schools.com/jsref/event_oncanplaythrough.asp)
+
+
+## Local Storage
+
+- Anything saved in the **Local storage**, will stay there even after the browser is restarted. 
+- Only if incognito mode is used, this behaviour will not be followed. 
+- And the only way to clear the localstorage non-programmatically is to clear the cache/cookies from the browser for that webpage.
+
+```js
+	//save an item to local storage
+	localStorage.setItem("mykey","myvalue");
+
+	// retrieve the item from local storage
+	localStorage.getItem("mykey");
+
+	// remove the item from local storage
+	localStorage.removeItem("mykey");
+
+	// clear the entire local storage
+	localStorage.clear();
+```
+
+- Items saved in the sessionStorage object will remain until the browser is closed by the user. Then, the storage will be cleared.
+```js
+	// all the methods are similar to that of localstorage
+	sessionStorage.setItem("mykey","myvalue");
+```
+## Math Object
+
+Math is a built-in object that has properties and methods for mathematical constants and functions.
+
+It has constants like : `Math.PI`, `Math.E`, `Math.SQRT2`, `Math.LN2`, and more.
+
+Useful methods like max to find maximum of given numbers :
+```js
+	// Find max value out of given numbers
+	Math.max(value0, value1, /* ... ,*/ valueN)
+
+	// Find the absolute value of given number
+	Math.abs(x)
+
+	// Find the cosine of an angle (provided in radians)
+	Math.cos(angle)
+
+	// Find arc sine of a value (returns in radians)
+	Math.asin(x)
+
+	// Returns x^y
+	Math.pow(x,y)
+
+	// Find poitive square root of a number
+	Math.sqrt(x)
+```
+
+## Ternary Operator
+
+```js
+	var age = 26;
+	var beverage = (age >= 21) ? "Beer" : "Juice";
+	console.log(beverage); // "Beer"
+```
+
+## Export
+
+The export statement is used when creating JavaScript modules to export live bindings to functions, objects, or primitive values from the module so they can be used by other programs with the import statement.
+
+There are two types of exports:
+
+1. Named Exports (Zero or more exports per module)
+
+	Named exports are useful to export several values. During the import, it is mandatory to import them within curly braces with the same name of the corresponding object.
+	```js
+		// export features declared earlier
+		export { myFunction, myVariable };
+
+		// export individual features (can export var, let,
+		// const, function, class)
+		export let myVariable = Math.sqrt(2);
+		export function myFunction() { /* ... */ };
+	```
+2. Default Exports (One per module)
+   
+   A default export can be imported using any name : 
+   
+	```js
+		// file test.js
+		let k; export default k = 12;
+	```
+
+	```js
+		// some other file
+		import m from './test'; // note that we have the freedom to use import m instead of import k, because k was default export
+		console.log(m);        // will log 12
+	```
+We can also rename named exports to avoid naming conflicts:
+```js
+	export { myFunction as function1,
+			myVariable as variable };
+```

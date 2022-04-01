@@ -10,10 +10,11 @@ Run the following to create a new react app :
 
 ```
     npx create-react-app .
- ```
+```
 npx (instead of npm) is used to allow us to *execute* the create-react-app package (instead of installing it). And the period just indicates that use *this* or *current* folder. 
 Note that create-react-app works with only some versions, so if it gives any error, download the suggested node version or the latest lms version. For managing node versions, it is best to use nvm. If using Windows machine, use nvm for windows. Once nvm is installed :
 
+```
     //confirm that nvm is installed
     nvm version
     
@@ -27,12 +28,14 @@ Note that create-react-app works with only some versions, so if it gives any err
     
     //Specify which version of node to use 
     nvm use <version>
-
+```
 
 
 To start the application run :
-
+```
     npm start
+```
+
 
 This will run the app at localhost:3000
 
@@ -66,51 +69,7 @@ We can pass in props to a component, just as we pass attributes to an html tag. 
 
 Note : If we want to return multiple components at once, then we need to wrap then in <React.Fragment> or <> for short.
 
-## React Hooks
 
-### useState hook
-In react we manage the state of the app, and when the state changes, we rerender the app. In order to make use of State in a function component :
-
-```js
-    import React, { useState } from 'react';
-    const [var, setVar] = useState("defaultVal");
-```
-
-We are doing object destructuring above, because useState returns an array.
-
-Setting the value of a variable :
-```js
-    setVar("newValue");
-```
-
-Setting the value of an array :
-```js
-    setTodos((prevTodos) => {
-	    return [...prevTodos, newTodoObject]
-	});
-```
-
-Note that each time the set function is called, the component will be rerendered.
-
-
-### useRef hook
-useRef allows us to reference elements inside of our html. For example, let us say we have an input textbox :
-
-```html
-    <input type='text' />
-```
-
-then we can access it using useRef thus :
-
-```js
-    const textboxRef = useRef()
-    
-    // referencing the text box
-    <input ref={textboxRef} type='text' />
-    
-    //Accessing the textbox's value
-    const userInput = textboxRef.current.value
- ```
 
 ## Statements and Expressions
 We saw that a component is just a function. So if we want to return an array of 
@@ -144,4 +103,26 @@ Different ways to [display images](https://betterprogramming.pub/how-to-display-
 	devServer: {
 	  port: 9000
 	}
+```
+
+
+
+## Package json file
+In package.json, we mention all the dependencies that our application will need. Many times, you'll find that in the version provided, we use either a tilde(~), or a caret(^) like so :
+```js
+    "dependencies": {
+    ...
+    "react": "~17.0.2",
+    "react-bootstrap": "^1.6.4",
+    ...
+```
+Here, `~` is used when we want to accept bug fix releases. So `~17.0.2` means accept versions upto `17.1.0`
+
+Whereas, `^` is used when we want to accept backwards-compatible new functionality. So `^1.6.4` means accept versions upto `2.0.0`
+
+Check npm's [package.json](https://docs.npmjs.com/cli/v7/configuring-npm/package-json#dependencies) docs or [semver](https://github.com/npm/node-semver#advanced-range-syntax) (semantic versioner for npm) docs for more clarity.
+
+All this is fine, but we might need to know exactly which version of a package is installed currently, it can be checked like this :
+```
+    npm list <package-name>
 ```
