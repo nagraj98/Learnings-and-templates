@@ -15,3 +15,11 @@ Points to note about a gif file :
 2. It is instead a collection of individual images played like a flipbook. 
 3. GIF was designed primarily for images and uses LZW (which was defined in 1984), which is not a good compression format for lossless compression
 4. Hence its size is generally larger than the original *mp4* video file, and yet worse in quality.
+
+
+## Push an existing repository from the command line
+```
+git remote add origin https://github.com/nagraj98/repo-name.git
+git branch -M main
+git push -u origin main
+```

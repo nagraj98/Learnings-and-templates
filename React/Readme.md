@@ -30,6 +30,7 @@ Note that create-react-app works with only some versions, so if it gives any err
     nvm use <version>
 ```
 
+NOTE : While doing an nvm install, or nvm use, you might need to run the cmd as an admin.
 
 To start the application run :
 ```

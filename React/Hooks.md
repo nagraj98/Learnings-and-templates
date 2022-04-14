@@ -142,3 +142,67 @@ const Welcome = (props) => {
         <h1> {myVar} </h1>
     )
 ```
+
+
+# Practice Questions
+
+1. What will be the output in below code
+    ```js
+    const MyComponent = () => {
+
+      const [myState, setMyState] = useState(0);
+      let isFirstRender = true;
+
+      useEffect(() => {
+        if (isFirstRender) {
+          console.log("First Render");
+        }
+        else {
+          console.log("Not the first render");
+        }
+      }, [myState]);
+
+      isFirstRender = false;
+      setMyState(10);
+    
+    }
+    ```
+
+    1.     First Render
+           Not the first render
+
+    1.     First Render
+           First render
+
+    Answer : option 2.
+
+    Explanation : Everytime the state changes, a rerender will happen, and everytime the component is re-rendered, all the variables declared outside of the state are re-created. So although isFirstRender is set to false, as soon as myState changes causing a re-render, isFirstRender is again created and initialised to true.
+
+
+
+2. What will be the output in below code
+    ```js
+    const MyComponent = () => {
+
+      const [myState, setMyState] = useState(5);
+
+      useEffect(() => {
+          console.log("MyState value : ", myState);
+      }, [myState]);
+
+      setMyState(10);
+      setMyState(10);
+    
+    }
+    ```
+
+    1.     MyState value : 5
+           MyState value : 10
+
+    2.     MyState value : 5
+           MyState value : 10
+           MyState value : 10
+
+Answer : option 1.
+
+Explanation : A re-render happens only when the state changes, and not everytime the setState method is called.
