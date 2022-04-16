@@ -228,14 +228,6 @@ Useful methods like max to find maximum of given numbers :
 	Math.sqrt(x)
 ```
 
-## Ternary Operator
-
-```js
-	var age = 26;
-	var beverage = (age >= 21) ? "Beer" : "Juice";
-	console.log(beverage); // "Beer"
-```
-
 ## Export
 
 The export statement is used when creating JavaScript modules to export live bindings to functions, objects, or primitive values from the module so they can be used by other programs with the import statement.
@@ -272,4 +264,50 @@ We can also rename named exports to avoid naming conflicts:
 ```js
 	export { myFunction as function1,
 			myVariable as variable };
+```
+
+## Iterating over an object
+
+To iterate over all properties in an object, we can use the loop for...in... to iterate over the keys:
+
+The syntax:
+```js
+for (let key in object) {
+  // do something for each key in the object 
+}
+```
+
+## String literals :
+
+```js
+const myString = `10% of 534 is ${534*0.1}`
+```
+
+## The Question mark (?) operator in javascript
+
+Three main uses of the ? operator :
+- Ternary Operator
+- Optional Chaining
+- Nullish Coalescing
+
+### Ternary Operator 
+```js
+	var age = 26;
+	var beverage = (age >= 21) ? "Beer" : "Juice";
+	console.log(beverage); // "Beer"
+```
+
+### Optional Chaining
+
+```js
+	const Employee = {
+		name : "Severus",
+		age : 32
+	}
+
+	console.log(Employee.department.name);
+	// Throws an error : Uncaught TypeError: Cannot read properties of undefined (reading 'name')
+
+	console.log(Employee.department?.name);
+	// just returns undefined
 ```

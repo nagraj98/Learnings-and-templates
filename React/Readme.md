@@ -127,3 +127,55 @@ All this is fine, but we might need to know exactly which version of a package i
 ```
     npm list <package-name>
 ```
+
+## Forcing re-render in the simplest way :
+```js
+const [rerender, setRerender] = useState(false);
+
+...
+setRerender(!rerender); // whenever you want to rerender.
+```
+
+## `npm audit` says the app has vulnerabilities in react-scripts
+
+These are not really vulnerabilities and npm audit is broken. - [Read here](https://github.com/facebook/create-react-app/issues/11174)
+
+Still to solve this issue, in package.json move the react-scripts to dev-dependencies like this :
+```
+  "devDependencies": {
+    "react-scripts": "<version>"
+  },
+```
+
+Then run `npm audit --production` to make sure there aren't really any vulnerabilities.
+
+
+## Changing state of Parent Component from Child Component
+
+We pass the setParentState function in the props to the child function so that we can access it from there.
+
+Parent :
+```js
+function Parent() {
+
+    const [parentState, setParentState] = useState("Hey");
+
+    return (
+    <div>CorpusResult
+        <Child setParentState={setParentState}/>
+    </div>
+}
+```
+
+Child:
+```js
+function Child({setParentState}) {
+    setParentState("Hello");
+
+    return (
+        <div>
+        Successfully changed state of Parent
+        </div>
+    )
+}
+```

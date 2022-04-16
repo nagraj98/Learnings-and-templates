@@ -143,6 +143,11 @@ const Welcome = (props) => {
     )
 ```
 
+Note : if you get an error like `undefined is not iterable` when using UseContext, the solution is to initialise it with an empty array like this :
+```js
+export const MyContext = React.createContext([]);
+```
+
 
 # Practice Questions
 

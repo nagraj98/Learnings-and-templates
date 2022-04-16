@@ -23,3 +23,12 @@ git remote add origin https://github.com/nagraj98/repo-name.git
 git branch -M main
 git push -u origin main
 ```
+
+## Committing with detailed description
+
+1. Use the git commit command without any flags. The configured editor will open (Vim in this case):
+2. To start typing press the i key on your keyboard, then in insert mode create a better commit with description however you want. The first  line is considered as the title, and the remaining lines will constitute the description.
+3. Once you have written all that you need, to returns to git, first you should exit insert mode, for that press ESC.
+4. Now close the Vim editor with save changes by typing on the keyboard :wq (w - write, q - quit): and press ENTER.
+
+All this can be done in VS-Code terminal.
