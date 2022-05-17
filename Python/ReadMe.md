@@ -14,7 +14,7 @@ We can use `datetime.now()` to get the current date and time, and `strftime()` t
 	print("now =", now)
 	# prints in following format : now = 2021-06-25 07:58:56.550604
 
-	# formatting the date into a string with like dd/mm/YY H:M:S
+	# formatting the date into a string like dd/mm/YY H:M:S
 	dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
 	print("date and time =", dt_string)
 	# prints following : date and time = 25/06/2021 07:58:56
@@ -89,6 +89,38 @@ For converting string to bytes like object, we can also use the encode method on
 bytesObject = base64String.encode()
 ```
 
+## OS module
+
+```python
+import os
+
+os.path.exists("path/to/thefolder")
+# returns bool (true/false)
+
+os.mkdir("path/to/thefolder/intermediate")
+# If thefolder exists, this will create the intermediate directory.
+
+os.mkdir("path/to/thefolder/intermediate/new/newer/newest")
+# Will throw error.
+
+os.makedirs("path/to/thefolder/intermediate/new/newer/newest")
+# If thefolder exists, then all the remaining directories, namely - intermediate, new, newer, newest - will be created.
+```
+
+More functions :
+```python
+os.remove()
+os.rmdir()
+os.path.join(location, file)
+os.name
+os.rename()
+os.path.getsize()
+os.listdir(path)
+os.chdir()
+os.getcwd()
+```
+
+
 
 # Python Installation
 
@@ -102,3 +134,5 @@ There's a possibility that you will get an error like "python is not recognized 
 This is because we need to add python to our (system's or user's) environment variables. First, open the anaconda prompt and run `where python`, which will givee the locations where python is installed. Let us say it is "C:\Installations\Anaconda\python.exe". So we need to add "C:\Installations\Anaconda" to the environment variables.
 
 Also add the "C:\Installations\Anaconda\Library\bin", to avoid issues with using pip. If we don't add this, we get the error pip-is-configured-with-locations-that-require-tls-ssl-however-the-ssl-module-in-python-is-not-available.
+
+

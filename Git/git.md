@@ -28,7 +28,21 @@ git push -u origin main
 
 1. Use the git commit command without any flags. The configured editor will open (Vim in this case):
 2. To start typing press the i key on your keyboard, then in insert mode create a better commit with description however you want. The first  line is considered as the title, and the remaining lines will constitute the description.
-3. Once you have written all that you need, to returns to git, first you should exit insert mode, for that press ESC.
-4. Now close the Vim editor with save changes by typing on the keyboard :wq (w - write, q - quit): and press ENTER.
+3. Once you have written all that you need, to return to git, first you should exit insert mode, for that press ESC.
+4. Now close the Vim editor with save changes by typing on the keyboard, `:wq` (w - write, q - quit) and press ENTER.
 
 All this can be done in VS-Code terminal.
+
+
+## Checking git configurations
+
+Check the existing username or user-email.
+```
+git config user.name
+git config user.email
+```
+
+change the user-email :
+```
+git config user.email newemail@mail.com
+```
