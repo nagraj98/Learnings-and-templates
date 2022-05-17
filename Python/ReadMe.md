@@ -1,3 +1,15 @@
+# Python Installation
+
+## Anaconda
+
+It is better to just install [anaconda distribution](https://www.anaconda.com/products/distribution), as along with python it includes the jupyter installation which is helpful for creating notebooks.
+
+Once it is installed, go to cmd and run `python --version`. 
+There's a possibility that you will get an error like "python is not recognized ...".
+
+This is because we need to add python to our (system's or user's) environment variables. First, open the anaconda prompt and run `where python`, which will givee the locations where python is installed. Let us say it is "C:\Installations\Anaconda\python.exe". So we need to add "C:\Installations\Anaconda" to the environment variables.
+
+Also add the "C:\Installations\Anaconda\Library\bin", to avoid issues with using pip. If we don't add this, we get the error pip-is-configured-with-locations-that-require-tls-ssl-however-the-ssl-module-in-python-is-not-available.
 
 
 # Basics
@@ -89,6 +101,20 @@ For converting string to bytes like object, we can also use the encode method on
 bytesObject = base64String.encode()
 ```
 
+## Unpacking (splat) operator *
+
+The * operator unpacks the individual elements of an array.
+
+```python
+name = "python"
+characters = [*name]
+
+print(characters)
+# ['p', 'y', 't', 'h', 'o', 'n']
+```
+
+For more detail understanding and more examples, read [this blog](https://towardsdatascience.com/unpacking-operators-in-python-306ae44cd480).
+
 ## OS module
 
 ```python
@@ -119,20 +145,3 @@ os.listdir(path)
 os.chdir()
 os.getcwd()
 ```
-
-
-
-# Python Installation
-
-## Anaconda
-
-It is better to just install [anaconda distribution](https://www.anaconda.com/products/distribution), as along with python it includes the jupyter installation which is helpful for creating notebooks.
-
-Once it is installed, go to cmd and run `python --version`. 
-There's a possibility that you will get an error like "python is not recognized ...".
-
-This is because we need to add python to our (system's or user's) environment variables. First, open the anaconda prompt and run `where python`, which will givee the locations where python is installed. Let us say it is "C:\Installations\Anaconda\python.exe". So we need to add "C:\Installations\Anaconda" to the environment variables.
-
-Also add the "C:\Installations\Anaconda\Library\bin", to avoid issues with using pip. If we don't add this, we get the error pip-is-configured-with-locations-that-require-tls-ssl-however-the-ssl-module-in-python-is-not-available.
-
-

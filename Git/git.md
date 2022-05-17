@@ -46,3 +46,38 @@ change the user-email :
 ```
 git config user.email newemail@mail.com
 ```
+
+## Stash
+
+Stashing takes the messy state of your working directory, and temporarily save it for further use.
+```
+git stash  
+```
+
+We can also stash the changes along with a message, using below command :
+
+```
+git stash save "<Stashing Message>"  
+```
+
+Check stored stashes :
+```
+git stash list  
+```
+
+Re-apply the changes that you just stashed :
+```
+git stash apply
+OR
+git stash apply <stash id>  
+```
+
+Delete a particular stash :
+```
+git stash drop <stash id>
+```
+
+Delete all the available stashes at once :
+```
+git stash clear
+```

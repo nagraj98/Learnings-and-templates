@@ -83,7 +83,9 @@ Lets first look at [expressions and statements](https://victorofoegbu.com/notes/
 Its not like these are good or bad, they're just easier to think of in the context of JSX.
 
 
-## Looping (Rendering multiple components)
+## Looping 
+
+### Rendering multiple components
 As we saw it is better to prefer expressions like map over statements like for loop. Morover, a react component expects either a string, another component, or an array of components. For loops do not return any of these, whereas map will return an array. Hence if we want to [return multiple components](https://reactjs.org/docs/lists-and-keys.html)(let us say returning multiple todo components in a todolist component), it is preferred to use map as follows:
 
 ```js
@@ -94,6 +96,26 @@ As we saw it is better to prefer expressions like map over statements like for l
 
 Note that we use key attribute which should have a unique value. This key is necessary to help react tell which element is new, so that it doesn't inefficiently mutate all the elements. (for more detail on the need of key, [read this](https://reactjs.org/docs/reconciliation.html#recursing-on-children))
 
+### Looping until a state changes.
+
+A normal while or for loop is a synchronous loop, but react setState() is an async job. Once you kick start the sync loop, before it is done looping, any async job just doesn't have a chance to step in. In other words, it becomes an infinite loop.
+
+So the trick is to convert your while-loop into an async one, using setTimeout().
+
+```js
+const myloopFunc = () => {
+
+    // change `while` to `if`
+    if (myState === "desiredvalue") {
+        // same code as in while loop's body
+    }
+
+    // at the end, start next async loop if condition still holds true
+    if (myState === "desiredvalue") {
+        setTimeout(myloopFunc, 0);
+    }
+}
+```
 
 ## To be expanded upon
 

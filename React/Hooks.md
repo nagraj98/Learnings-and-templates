@@ -7,7 +7,7 @@ React hooks are used in functional components
 In react we manage the state of the app, and when the state changes, we rerender the app. In order to make use of State in a function component :
 
 ```js
-    import React, { useState } from 'react';
+    import React, { useState } from "react";
     const [myVar, setMyVar] = useState("defaultVal");
 ```
 
@@ -18,7 +18,7 @@ Setting the value of a variable :
     setMyVar("newValue");
 ```
 
-Setting the value of an array :
+Example of using previous value - Adding an item to an array
 ```js
     setTodos((prevTodos) => {
 	    return [...prevTodos, newTodoObject]

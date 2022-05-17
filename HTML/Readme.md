@@ -134,6 +134,11 @@ Where,
 ```
 
 
+## Lifecycle of video element in chromium
+
+[read here](http://abhijeetk.github.io/Video-rendering-in-chromium(Sequence-diagram)/)
+
+
 
 
 

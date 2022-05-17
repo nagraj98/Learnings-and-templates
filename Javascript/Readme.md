@@ -72,7 +72,11 @@ Taken from [this](https://blog.praveen.science/right-way-of-delaying-execution-s
     await new Promise(done => setTimeout(() => done(), 5000));
 ```
 
+## SetTimeout and SetInterval
 
+[set timeout](https://developer.mozilla.org/en-US/docs/Web/API/setTimeout)
+
+[set interval](https://developer.mozilla.org/en-US/docs/Web/API/setInterval)
 
 
 ## For Loop :
@@ -82,6 +86,10 @@ Taken from [this](https://blog.praveen.science/right-way-of-delaying-execution-s
   	// some code
 	}
 ```
+
+The `break` statement "jumps out" of a loop.
+
+The `continue` statement "jumps over" one iteration in the loop.
 
 ## Append values to array :
 
@@ -266,7 +274,7 @@ We can also rename named exports to avoid naming conflicts:
 			myVariable as variable };
 ```
 
-## Iterating over an object
+## Iterating over an object (For In Loop)
 
 To iterate over all properties in an object, we can use the loop for...in... to iterate over the keys:
 
@@ -310,4 +318,10 @@ Three main uses of the ? operator :
 
 	console.log(Employee.department?.name);
 	// just returns undefined
+```
+
+## Getting the base url
+
+```js
+window.location.origin.toString()
 ```
