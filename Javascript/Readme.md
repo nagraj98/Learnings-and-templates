@@ -325,3 +325,15 @@ Three main uses of the ? operator :
 ```js
 window.location.origin.toString()
 ```
+
+## JsDeliver (CDN)
+
+jsDelivr is a public, open-source CDN (Content Delivery Network) developed by Dmitriy Akulov and Prospect One, focused on performance, reliability, and security. It is free to use for everyone, with no bandwidth limits.
+
+jsDelivr provides mirrors for npm, GitHub, WordPress plugins, and custom endpoints for several other projects with special requirements. This simply means that any npm package or public github repo can be converted into a CDN.
+
+Steps for making a github repo into a CDN :
+1. Create a public github repo and push the files that you want to deliver, there.
+2. That's it ! You can access this as CDN in the following url : `https://cdn.jsdelivr.net/gh/{username}/{repo}/`
+
+There are more capabilities like versioning which you can read [here](https://gomakethings.com/how-to-turn-any-github-repo-into-a-cdn/).
