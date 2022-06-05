@@ -16,6 +16,11 @@ Points to note about a gif file :
 3. GIF was designed primarily for images and uses LZW (which was defined in 1984), which is not a good compression format for lossless compression
 4. Hence its size is generally larger than the original *mp4* video file, and yet worse in quality.
 
+## Issues
+
+#### Q. Git init is not creating a master/main branch
+A. Git init creates a repo without any commits. Since a branch is a pointer to a commit, you can't have branches until you commit something.
+
 ## Creating personal Repo
 A repository with the same name as your username, is a [special repository](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/managing-your-profile-readme): its `README.md` will appear on your profile!
 For example, the nagraj98 repository's readme appears on my profile like so :

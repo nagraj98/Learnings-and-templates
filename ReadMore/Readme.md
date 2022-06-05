@@ -14,4 +14,13 @@
 12. Javasript regexp [here](https://www.w3schools.com/jsref/jsref_obj_regexp.asp)
 13. webrtc https://webrtc.org/
 14. https://voxel51.com/docs/fiftyone/
-15. 
+
+
+
+Resources for learning :
+- https://exercism.org/
+- https://learn-anything.xyz/#!
+
+
+Questions :
+- https://datasciencenerd.com/do-you-need-a-good-gpu-for-machine-learning/

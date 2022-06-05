@@ -101,6 +101,17 @@ For converting string to bytes like object, we can also use the encode method on
 bytesObject = base64String.encode()
 ```
 
+## Timing a function
+
+```python
+import time
+
+def myfunc(x):
+	return x**2
+
+%time [myfunc(i) for i in range(10)]
+```
+
 ## Unpacking (splat) operator *
 
 The * operator unpacks the individual elements of an array.
@@ -144,4 +155,70 @@ os.path.getsize()
 os.listdir(path)
 os.chdir()
 os.getcwd()
+```
+
+#### Getting just the name of the file, from the path :
+
+```python
+filepath = 'c:\dir1\dir2\\file_01.png'
+
+# way 1
+name = os.path.basename(filepath)
+print(name)
+
+# way 2
+_, tail = os.path.split(filepath)
+print(tail)
+```
+
+Both the ways will print `file_01.png`
+
+
+
+## Parallelising using joblib 
+
+Joblib is the library used by other libraries like scikitlearn to run jobs in parallel. Even joblib is just a wrapper which uses other libraries for running jobs in parallel.
+
+Backend(python library) choices given by joblib :
+- loky (default)
+- multiprocessing
+- threading
+- dask
+- custom backend
+
+Below are the steps for parallelising a function;s execution :
+- Wrap normal python function calls into delayed() method of joblib. This will create a delayed function that won't execute immediately.
+- Create Parallel object with a number of processes/threads to use for parallel computing. This will create a parallel pool with that many processes available for processing in parallel.
+- Pass list of delayed wrapped function to an instance of Parallel. It'll run them all in parallel and return the result as a list.
+
+```python
+from joblib import Parallel, delayed
+
+def my_fun(x):
+	return math.sqrt(i**2)
+
+num = 10
+
+# The 3 steps
+delayed_funcs = [delayed(my_fun)(i) for i in range(num)]
+parallel_pool = Parallel(n_jobs=-1)
+%time parallel_pool(delayed_funcs)
+
+# The 3 steps in one line
+Parallel(n_jobs=2)(delayed(my_fun)(i) for i in range(num))
+```
+The default value of n_jobs is -1, which indicates that it should use all available cores on a computer.
+
+The decision of using multithreading vs multiprocessing is based on the backend that is used. For the default backend loky, the default choice is multithreading.
+
+The above information was collected from [this amazing blog](https://coderzcolumn.com/tutorials/python/joblib-parallel-processing-in-python), do check it out for more examples.
+
+
+# Issues
+
+Q. tqdm: 'module' object is not callable
+A. This is a problem related to your import. Change the import as shown below :
+```diff
+- import tqdm
++ from tqdm import tqdm
 ```
