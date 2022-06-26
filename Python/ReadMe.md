@@ -71,6 +71,11 @@ We can use `datetime.now()` to get the current date and time, and `strftime()` t
 	thisdict["color"] = "red"
 ```
 
+### merging two dictionaies :
+```python
+dict_3 = {**dict_1,**dict_2}
+```
+
 # Advanced
 
 ## Getting an image from base64 data
@@ -157,23 +162,23 @@ os.chdir()
 os.getcwd()
 ```
 
-#### Getting just the name of the file, from the path :
+#### Getting basename and parent of a file, from the path :
 
 ```python
 filepath = 'c:\dir1\dir2\\file_01.png'
 
 # way 1
-name = os.path.basename(filepath)
-print(name)
+base = os.path.basename(filepath)
+print(base) # 'file_01.png'
+
+parent = os.path.dirname(filepath)
+print(parent) # 'c:\\dir1\\dir2'
 
 # way 2
-_, tail = os.path.split(filepath)
-print(tail)
+parent , tail = os.path.split(filepath)
+print(tail) # 'file_01.png'
+print(parent) # 'c:\\dir1\\dir2'
 ```
-
-Both the ways will print `file_01.png`
-
-
 
 ## Parallelising using joblib 
 
