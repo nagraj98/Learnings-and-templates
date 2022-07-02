@@ -183,6 +183,23 @@ print(tail) # 'file_01.png'
 print(parent) # 'c:\\dir1\\dir2'
 ```
 
+### Shutil
+
+In some cases, os module falls short where other libraries like shutil work better.
+
+```python
+import shutil
+
+## Copying files
+shutil.copy2('src/dir/file.ext', '/dst/dir/newname.ext') # target file name given
+shutil.copy2('src/dir/file.ext', '/dst/dir') # target filename same as source
+
+## removing a directory and all its contents
+shutil.rmtree('dst')
+
+
+```
+
 ## Parallelising using joblib 
 
 Joblib is the library used by other libraries like scikitlearn to run jobs in parallel. Even joblib is just a wrapper which uses other libraries for running jobs in parallel.

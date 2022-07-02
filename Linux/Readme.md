@@ -25,3 +25,9 @@ Search navigation using less :
 - ? – search for a pattern which will take you to the previous occurrence
 - n – for next match in selected direction
 - N – for previous match in selected direction
+
+
+
+# Nginx 
+
+To be added.
