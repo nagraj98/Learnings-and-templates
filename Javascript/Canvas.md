@@ -50,10 +50,22 @@ ctx.lineTo(200, 100);
 ctx.stroke();
 ```
 
-#### To draw a circle on a canvas, use the following methods:
+#### To draw an arc or a circle on a canvas, use the following methods:
+```js
+arc(x, y, radius, startAngle, endAngle)
+arc(x, y, radius, startAngle, endAngle, counterclockwise)
+```
 
 - beginPath() - begins a path
 - arc(x,y,r,startangle,endangle) - creates an arc/curve. To create a circle with arc(): Set start angle to 0 and end angle to 2\*Math.PI. The x and y parameters define the x- and y-coordinates of the center of the circle. The r parameter defines the radius of the circle.
+
+#### To draw an arc on a canvas, use the following methods:
+
+- beginPath() - begins a path
+- arc(x,y,r,startangle,endangle) - creates an arc/curve. To create a circle with arc(): Set start angle to 0 and end angle to 2\*Math.PI. The x and y parameters define the x- and y-coordinates of the center of the circle. The r parameter defines the radius of the circle.
+
+
+
 
 #### To draw an image on a canvas, use the following method:
 

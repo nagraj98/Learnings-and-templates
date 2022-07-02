@@ -155,7 +155,10 @@ os.remove()
 os.rmdir()
 os.path.join(location, file)
 os.name
-os.rename()
+
+# Renaming the file
+os.rename(old_name, new_name)
+
 os.path.getsize()
 os.listdir(path)
 os.chdir()
@@ -222,6 +225,7 @@ The above information was collected from [this amazing blog](https://coderzcolum
 # Issues
 
 Q. tqdm: 'module' object is not callable
+
 A. This is a problem related to your import. Change the import as shown below :
 ```diff
 - import tqdm

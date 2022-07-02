@@ -17,7 +17,9 @@ read [here](https://docs.opencv.org/3.4/d6/d00/tutorial_py_root.html)
 # Code
 
 
-Extracting all the frames from a video
+### Extracting all the frames from a video
+
+
 ```python
 import cv2
 
@@ -47,7 +49,7 @@ cv2.destroyAllWindows()
 ```
 
 
-Merging individual frames into a video using cv:
+### Merging individual frames into a video using cv:
 
 ```python
 video_path = "data/myvideo.mp4"
@@ -67,6 +69,35 @@ for frame_number in range(100):
     # write to video
     vidwriter.write(image)
 ```
+
+## Transforming images with opencv
+
+### Flipping an image
+```python
+# flipping vertically
+image = cv2.flip(image, 0)
+
+# flipping horizintally
+image = cv2.flip(image, 1)
+
+# flipping on both axes
+image = cv2.flip(image, -1)
+```
+
+## Drawing with opencv
+
+### Drawing an arrowed line
+cv2.arrowedLine(image, start_point, end_point, color, thickness, line_type, shift, tipLength)
+
+```python
+image = cv2.arrowedLine(image, start_point = (0, 0), end_point = (200, 200), color = (0, 255, 0), thickness = 9, tipLength = 0.5)
+```
+
+### Drawing transclucent shapes
+https://stackoverflow.com/a/56472488
+
+
+
 
 
 

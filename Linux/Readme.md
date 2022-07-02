@@ -9,6 +9,19 @@ sudo apt install wget
 wget <OPTION> <URL>
 ```
 
-OPTIONS :
+Options :
 - -q : hide output in the terminal
 - -P : save the file in a specific location
+
+### Less command to read logs
+
+```
+less filename
+```
+
+Search navigation using less :
+
+- / – search for a pattern which will take you to the next occurrence
+- ? – search for a pattern which will take you to the previous occurrence
+- n – for next match in selected direction
+- N – for previous match in selected direction

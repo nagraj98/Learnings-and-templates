@@ -45,6 +45,9 @@ git config user.email
 change the user-email :
 ```
 git config user.email newemail@mail.com
+
+<!-- For changing globally -->
+git config --global user.email newemail@mail.com
 ```
 
 ## Stash
@@ -80,4 +83,16 @@ git stash drop <stash id>
 Delete all the available stashes at once :
 ```
 git stash clear
+```
+
+
+
+# Gitignore
+
+```
+# ignore directory and all its contents
+MyDir1/
+
+# ignore subdirectories but not files of this directory
+MyDir2/*/
 ```
